@@ -1,0 +1,459 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Rick's Rubiks Cube(THIS WEBSITE WORKS THE BEST IF YOU USE CHROME ON PC)</title>
+
+</head>
+<body>
+    <div class="scene" id="scene" style="border-color:grey; color:deeppink">
+        <fieldset>
+            <legend>Stop Watch</legend>
+            <a href="#" id="start" onclick="startStopwatch()" style="border-color:grey; color:deeppink">Start</a>&nbsp;
+
+            <a href="#" id="stop" onclick="stopStopwatch()" style="border-color:grey; color:deeppink">Stop</a>&nbsp;
+
+            <a href="#" id="reset" onclick="resetStopwatch()" style="border-color:grey; color:deeppink">Reset</a>&nbsp;
+
+            <span id="s_minutes" style="border-color:grey; color:deeppink">00</span>:
+            <span id="s_seconds" style="border-color:grey; color:deeppink">00</span>:
+            <span id="s_ms" style="border-color:grey; color:deeppink">000</span>
+        </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+        <div id="controls">
+            <button id="middleDown" onclick="middleDown()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                M
+                <button id="middleUp" onclick="middleUp()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    M'
+                </button>
+                <button id="frontClock" onclick="frontClock()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    F
+                </button>
+                <button id="frontCounter" onclick="frontCounter()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    F'
+                </button>
+                <button id="topRight" onclick="topRight()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    U'
+                </button>
+                <button id="topLeft" onclick="topLeft()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    U
+                </button>
+
+                <button id="rightDown" onclick="rightDown()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    R'
+                </button>
+                <button id="rightUp" onclick="rightUp()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    R
+                </button>
+                <button id="leftUp " onclick="leftUp ()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    L'
+                </button>
+                <button id="leftDown" onclick="leftDown()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    L
+                </button>
+                <button id="backCounter" onclick="backCounter()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    B
+                </button>
+                <button id="backClock " onclick="backClock ()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    B'
+                </button>
+                <button id="bottomRight" onclick="bottomRight()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    D
+                </button>
+                <button id="bottomLeft " onclick="bottomLeft()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    D'
+                </button>
+                <button id="scramble" onclick="scramble()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    Scramble
+                </button>
+                <div id="turn">
+                    <input type="text" id="instruct"><br>
+                    <button id="submit" onclick="submit()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                        Submit
+                    </button>
+
+                </div>
+
+        </div>
+
+
+
+        <div class="pivot centered" id="pivot" style="transform: rotateX(-35deg) rotateY(-135deg);">
+            <div class="cube" id="cube">
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="guide">
+        <div class="anchor" id="anchor3" style="transform: translateX(3px) translateZ(-33.33%) rotate(-270deg) translateZ(66.67%);"></div>
+        <div class="anchor" id="anchor2" style="transform: translateX(3px) translateZ(-33.33%) rotate(-180deg) translateZ(66.67%);"></div>
+        <div class="anchor" id="anchor1" style="transform: translateX(3px) translateZ(-33.33%) rotate(-90deg) translateZ(66.67%);"></div>
+        <div class="anchor" id="anchor0" style="transform: translateX(3px) translateZ(-33.33%) rotate(0deg) translateZ(66.67%);"></div>
+        <div class="anchor" id="anchor7" style="transform: translateZ(3px) translateY(-33.33%) rotate(-270deg) translateY(66.67%);"></div>
+        <div class="anchor" id="anchor6" style="transform: translateZ(3px) translateY(-33.33%) rotate(-180deg) translateY(66.67%);"></div>
+        <div class="anchor" id="anchor5" style="transform: translateZ(3px) translateY(-33.33%) rotate(-90deg) translateY(66.67%);"></div>
+        <div class="anchor" id="anchor4" style="transform: translateZ(3px) translateY(-33.33%) rotate(0deg) translateY(66.67%);"></div>
+        <div class="anchor" id="anchor11" style="transform: translateY(3px) translateX(-33.33%) rotate(-270deg) translateX(66.67%);"></div>
+        <div class="anchor" id="anchor10" style="transform: translateY(3px) translateX(-33.33%) rotate(-180deg) translateX(66.67%);"></div>
+        <div class="anchor" id="anchor9" style="transform: translateY(3px) translateX(-33.33%) rotate(-90deg) translateX(66.67%);"></div>
+        <div class="anchor" id="anchor8" style="transform: translateY(3px) translateX(-33.33%) rotate(0deg) translateX(66.67%);"></div>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+
+        var _0x4e01 = ['div', 'target', 'firstChild', 'exec', 'deg)', 'now', 'username', 'setAttribute', 'pageX', 'fill', 'includes', 'removeEventListener', 'anchor', 'forEach', 'mousemove', 'call', 'cookie', 'charAt', 'split', 'pageY', 'addEventListener', 'appendChild', 'getElementsByClassName', 'rotate', 'closest', 'transform', 'createElement', 'substring', 'rotateX(0deg)', '#s_ms', 'floor', 'green', 'toGMTString', '.element', 'blue', 'textContent', 'piece', 'children', 'getElementById', 'mouseup', 'input', '#s_seconds', ';path=/', 'hasChildNodes', 'expires=', 'log', 'indexOf', 'mousedown', 'fromCharCode', 'random', 'getTime', 'body', 'style', 'map', 'toString', 'instruct', 'querySelector', '#s_minutes', 'length', 'padStart', 'replace', 'translate', 'parentNode', 'orange', 'white', 'ondragstart', 'filter', 'value', 'className']; (function (_0x28806d, _0x4e013f) { var _0x1fd5a2 = function (_0x2f3868) { while (--_0x2f3868) { _0x28806d['push'](_0x28806d['shift']()); } }; _0x1fd5a2(++_0x4e013f); }(_0x4e01, 0x10e)); var _0x1fd5 = function (_0x28806d, _0x4e013f) { _0x28806d = _0x28806d - 0x0; var _0x1fd5a2 = _0x4e01[_0x28806d]; return _0x1fd5a2; }; var colors = [_0x1fd5('0x28'), _0x1fd5('0x25'), 'yellow', _0x1fd5('0x1'), _0x1fd5('0x0'), 'red'], pieces = document[_0x1fd5('0x1c')](_0x1fd5('0x2a')); function mx(_0x22c045, _0x47f9ef) { return ([0x2, 0x4, 0x3, 0x5][_0x47f9ef % 0x4 | 0x0] + _0x22c045 % 0x2 * ((_0x47f9ef | 0x0) % 0x4 * 0x2 + 0x3) + 0x2 * (_0x22c045 / 0x2 | 0x0)) % 0x6; } let offset = 0x0, paused = !![]; render(); function startStopwatch(_0x475c4d) { if (paused) { paused = ![]; offset -= Date[_0x1fd5('0xb')](); render(); } } function stopStopwatch(_0x593935) { if (!paused) { paused = !![]; offset += Date['now'](); } } function resetStopwatch(_0x39b150) { if (paused) { offset = 0x0; render(); } else { offset = -Date[_0x1fd5('0xb')](); } } function format(_0x1acc23, _0x506d12, _0x146492, _0x2f5ae1) { _0x1acc23 = Math[_0x1fd5('0x24')](_0x1acc23 / _0x506d12) % _0x146492; return _0x1acc23[_0x1fd5('0x3c')]()[_0x1fd5('0x41')](_0x2f5ae1, 0x0); } function render() { var _0x996587 = paused ? offset : Date[_0x1fd5('0xb')]() + offset; document[_0x1fd5('0x3e')](_0x1fd5('0x23'))[_0x1fd5('0x29')] = format(_0x996587, 0x1, 0x3e8, 0x3); document[_0x1fd5('0x3e')](_0x1fd5('0x2f'))[_0x1fd5('0x29')] = format(_0x996587, 0x3e8, 0x3c, 0x2); document['querySelector'](_0x1fd5('0x3f'))[_0x1fd5('0x29')] = format(_0x996587, 0xea60, 0x3c, 0x2); if (!paused) { requestAnimationFrame(render); } } function getAxis(_0x1f97db) { return String[_0x1fd5('0x36')]('X'['charCodeAt'](0x0) + _0x1f97db / 0x2); } function assembleCube() { function _0x35ad69(_0x200fc0) { _0x38e1d2 = _0x38e1d2 + (0x1 << _0x200fc0); pieces[_0x5ee762]['children'][_0x200fc0][_0x1fd5('0x1b')](document[_0x1fd5('0x20')](_0x1fd5('0x6')))[_0x1fd5('0xd')]('class', 'sticker\x20' + colors[_0x200fc0]); return _0x1fd5('0x43') + getAxis(_0x200fc0) + '(' + (_0x200fc0 % 0x2 * 0x4 - 0x2) + 'em)'; } for (var _0x38e1d2, _0x255b6d, _0x5ee762 = 0x0; _0x38e1d2 = 0x0, _0x5ee762 < 0x1a; _0x5ee762++) { _0x255b6d = mx(_0x5ee762, _0x5ee762 % 0x12); pieces[_0x5ee762][_0x1fd5('0x3a')][_0x1fd5('0x1f')] = _0x1fd5('0x22') + _0x35ad69(_0x5ee762 % 0x6) + (_0x5ee762 > 0x5 ? _0x35ad69(_0x255b6d) + (_0x5ee762 > 0x11 ? _0x35ad69(mx(_0x255b6d, _0x255b6d + 0x2)) : '') : ''); pieces[_0x5ee762][_0x1fd5('0xd')]('id', _0x1fd5('0x2a') + _0x38e1d2); } } function getPieceBy(_0x53a2b8, _0x420a5d, _0x35195f) { return document[_0x1fd5('0x2c')](_0x1fd5('0x2a') + ((0x1 << _0x53a2b8) + (0x1 << mx(_0x53a2b8, _0x420a5d)) + (0x1 << mx(_0x53a2b8, _0x420a5d + 0x1)) * _0x35195f)); } function swapPieces(_0x1e9a4e, _0xce3c0e) { for (var _0xb0ad10 = 0x0; _0xb0ad10 < 0x6 * _0xce3c0e; _0xb0ad10++) { var _0x36ff27 = getPieceBy(_0x1e9a4e, _0xb0ad10 / 0x2, _0xb0ad10 % 0x2), _0x499752 = getPieceBy(_0x1e9a4e, _0xb0ad10 / 0x2 + 0x1, _0xb0ad10 % 0x2); for (var _0x3782c1 = 0x0; _0x3782c1 < 0x5; _0x3782c1++) { var _0x5995d7 = _0x36ff27[_0x1fd5('0x2b')][_0x3782c1 < 0x4 ? mx(_0x1e9a4e, _0x3782c1) : _0x1e9a4e]['firstChild'], _0x1d6fa9 = _0x499752['children'][_0x3782c1 < 0x4 ? mx(_0x1e9a4e, _0x3782c1 + 0x1) : _0x1e9a4e][_0x1fd5('0x8')], _0x455bad = _0x5995d7 ? _0x5995d7['className'] : ''; if (_0x455bad) _0x5995d7[_0x1fd5('0x5')] = _0x1d6fa9[_0x1fd5('0x5')], _0x1d6fa9[_0x1fd5('0x5')] = _0x455bad; } } } function animateRotation(_0x52b588, _0x5d7f2c, _0x38e064) { console[_0x1fd5('0x33')](_0x52b588 + '\x20' + _0x5d7f2c + '\x20' + _0x38e064); var _0x26880a = 0.3 * (_0x52b588 % 0x2 * 0x2 - 0x1) * (0x2 * _0x5d7f2c - 0x1), _0x1c9d23 = Array(0x9)[_0x1fd5('0xf')](pieces[_0x52b588])[_0x1fd5('0x3b')](function (_0x2909bd, _0x1dfd2d) { return _0x1dfd2d ? getPieceBy(_0x52b588, _0x1dfd2d / 0x2, _0x1dfd2d % 0x2) : _0x2909bd; }); (function _0x46de41() { var _0x16d450 = Date[_0x1fd5('0xb')]() - _0x38e064, _0x425aa3 = _0x1fd5('0x1d') + getAxis(_0x52b588) + '(' + _0x26880a * _0x16d450 * (_0x16d450 < 0x12c) + _0x1fd5('0xa'); _0x1c9d23[_0x1fd5('0x13')](function (_0x5bf8f5) { _0x5bf8f5[_0x1fd5('0x3a')][_0x1fd5('0x1f')] = _0x5bf8f5['style'][_0x1fd5('0x1f')][_0x1fd5('0x42')](/rotate.\(\S+\)/, _0x425aa3); }); if (_0x16d450 >= 0x12c) return swapPieces(_0x52b588, 0x3 - 0x2 * _0x5d7f2c); requestAnimationFrame(_0x46de41); }()); } function setup() { angleMode(DEGREE); } function frontClock() { animateRotation(0x1, !![], Date[_0x1fd5('0xb')]()); } function frontCounter() { animateRotation(0x1, ![], Date[_0x1fd5('0xb')]()); } function backClock() { animateRotation(0x0, ![], Date[_0x1fd5('0xb')]()); } function backCounter() { animateRotation(0x0, !![], Date[_0x1fd5('0xb')]()); } function bottomLeft() { animateRotation(0x3, ![], Date[_0x1fd5('0xb')]()); } function bottomRight() { animateRotation(0x3, !![], Date[_0x1fd5('0xb')]()); } function leftDown() { animateRotation(0x5, !![], Date[_0x1fd5('0xb')]()); } function leftUp() { animateRotation(0x5, ![], Date[_0x1fd5('0xb')]()); } function rightDown() { animateRotation(0x4, ![], Date[_0x1fd5('0xb')]()); } function rightUp() { animateRotation(0x4, !![], Date[_0x1fd5('0xb')]()); } function topRight() { animateRotation(0x2, ![], Date['now']()); } function topLeft() { animateRotation(0x2, !![], Date[_0x1fd5('0xb')]()); } function middleUp() { animateRotation(0x4, ![], Date[_0x1fd5('0xb')]()); animateRotation(0x5, !![], Date[_0x1fd5('0xb')]()); rotateX('90'); } function middleDown() { animateRotation(0x4, !![], Date[_0x1fd5('0xb')]()); animateRotation(0x5, ![], Date[_0x1fd5('0xb')]()); rotateX('90'); } function scramble() { for (var _0x5136b7 = 0x0; _0x5136b7 < 0x1e; _0x5136b7++) { var _0x20f15d = [frontClock, frontCounter, backClock, backCounter, rightUp, rightDown, leftUp, leftDown, topRight, topLeft, bottomRight, bottomLeft]; _0x20f15d[Math[_0x1fd5('0x24')](Math[_0x1fd5('0x37')]() * _0x20f15d[_0x1fd5('0x40')])](); } } function mousedown(_0x480955) { var _0x1071a4 = pivot[_0x1fd5('0x3a')][_0x1fd5('0x1f')]['match'](/-?\d+\.?\d*/g)[_0x1fd5('0x3b')](Number), _0x36b0ad = _0x480955[_0x1fd5('0x7')][_0x1fd5('0x1e')](_0x1fd5('0x27')), _0x59bc88 = [][_0x1fd5('0x34')][_0x1fd5('0x15')]((_0x36b0ad || cube)[_0x1fd5('0x44')][_0x1fd5('0x2b')], _0x36b0ad); function _0x24cabe(_0x444059) { if (_0x36b0ad) { var _0x9aaac6 = /\d/[_0x1fd5('0x9')](document['elementFromPoint'](_0x444059['pageX'], _0x444059[_0x1fd5('0x19')])['id']); if (_0x9aaac6 && _0x9aaac6[_0x1fd5('0x2e')][_0x1fd5('0x10')](_0x1fd5('0x12'))) { _0x1ecc68(); var _0x8227da = _0x36b0ad[_0x1fd5('0x44')][_0x1fd5('0x2b')][mx(_0x59bc88, Number(_0x9aaac6) + 0x3)][_0x1fd5('0x31')](); animateRotation(mx(_0x59bc88, Number(_0x9aaac6) + 0x1 + 0x2 * _0x8227da), _0x8227da, Date[_0x1fd5('0xb')]()); } } else pivot[_0x1fd5('0x3a')][_0x1fd5('0x1f')] = 'rotateX(' + (_0x1071a4[0x0] - (_0x444059[_0x1fd5('0x19')] - _0x480955['pageY']) / 0x2) + _0x1fd5('0xa') + 'rotateY(' + (_0x1071a4[0x1] + (_0x444059['pageX'] - _0x480955[_0x1fd5('0xe')]) / 0x2) + _0x1fd5('0xa'); } function _0x1ecc68() { document['body'][_0x1fd5('0x1b')](guide); scene['removeEventListener'](_0x1fd5('0x14'), _0x24cabe); document[_0x1fd5('0x11')](_0x1fd5('0x2d'), _0x1ecc68); scene[_0x1fd5('0x1a')](_0x1fd5('0x35'), mousedown); } (_0x36b0ad || document[_0x1fd5('0x39')])[_0x1fd5('0x1b')](guide); scene['addEventListener'](_0x1fd5('0x14'), _0x24cabe); document[_0x1fd5('0x1a')](_0x1fd5('0x2d'), _0x1ecc68); scene[_0x1fd5('0x11')](_0x1fd5('0x35'), mousedown); } function submit() { var _0x26529d = document[_0x1fd5('0x2c')](_0x1fd5('0x3d'))[_0x1fd5('0x4')]; var _0x1f733c = _0x26529d[_0x1fd5('0x18')](/[ ,]+/)[_0x1fd5('0x3')](Boolean); for (var _0x3a4f5e = 0x0; _0x3a4f5e < _0x1f733c[_0x1fd5('0x40')]; _0x3a4f5e++) { if (_0x1f733c[_0x3a4f5e] == 'F') frontClock(); if (_0x1f733c[_0x3a4f5e] == 'F\x27') frontCounter(); if (_0x1f733c[_0x3a4f5e] == 'R') rightUp(); if (_0x1f733c[_0x3a4f5e] == 'R\x27') rightDown(); if (_0x1f733c[_0x3a4f5e] == 'L') leftUp(); if (_0x1f733c[_0x3a4f5e] == 'L\x27') leftDown(); if (_0x1f733c[_0x3a4f5e] == 'U') topLeft(); if (_0x1f733c[_0x3a4f5e] == 'U\x27') topRight(); if (_0x1f733c[_0x3a4f5e] == 'B') backClock(); if (_0x1f733c[_0x3a4f5e] == 'B\x27') backCounter(); if (_0x1f733c[_0x3a4f5e] == 'D') bottomRight(); if (_0x1f733c[_0x3a4f5e] == 'D\x27') bottomLeft(); if (_0x1f733c[_0x3a4f5e] == 'M\x27') middleUp(); if (_0x1f733c[_0x3a4f5e] == 'M') middleDown(); } } document[_0x1fd5('0x2')] = function () { return ![]; }; window['addEventListener']('load', assembleCube); scene[_0x1fd5('0x1a')](_0x1fd5('0x35'), mousedown); swapPieces(0x0, 0x2); function setCookie(_0x4ad7e9, _0x30ff08, _0x27c10d) { var _0x393103 = new Date(); _0x393103['setTime'](_0x393103[_0x1fd5('0x38')]() + _0x27c10d * 0x18 * 0x3c * 0x3c * 0x3e8); var _0x5c7c60 = _0x1fd5('0x32') + _0x393103[_0x1fd5('0x26')](); document['cookie'] = _0x4ad7e9 + '=' + _0x30ff08 + ';' + _0x5c7c60 + _0x1fd5('0x30'); } function getCookie(_0x336aa4) { var _0x5ae676 = _0x336aa4 + '='; var _0x2f6314 = decodeURIComponent(document[_0x1fd5('0x16')]); var _0x1af141 = _0x2f6314[_0x1fd5('0x18')](';'); for (var _0x530b7c = 0x0; _0x530b7c < _0x1af141[_0x1fd5('0x40')]; _0x530b7c++) { var _0x412e8 = _0x1af141[_0x530b7c]; while (_0x412e8[_0x1fd5('0x17')](0x0) == '\x20') { _0x412e8 = _0x412e8[_0x1fd5('0x21')](0x1); } if (_0x412e8['indexOf'](_0x5ae676) == 0x0) { return _0x412e8[_0x1fd5('0x21')](_0x5ae676[_0x1fd5('0x40')], _0x412e8[_0x1fd5('0x40')]); } } return ''; } function checkCookie() { var _0x57742c = getCookie(_0x1fd5('0xc')); if (_0x57742c != '') { alert('Welcome\x20again\x20' + _0x57742c); } else { _0x57742c = prompt('Please\x20enter\x20your\x20name:', ''); if (_0x57742c != '' && _0x57742c != null) { setCookie(_0x1fd5('0xc'), _0x57742c, 0x1e); } } }
+
+
+    </script>
+    <style>
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            background-image: url('https://images5.alphacoders.com/686/thumb-1920-686331.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+
+
+
+        .centered, .cube > .piece > .element > .sticker {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .scene {
+            width: 100%;
+            height: 100%;
+            perspective: 1200px;
+            transform-style: preserve-3d;
+        }
+
+            .scene > .pivot {
+                width: 0;
+                height: 0;
+                transition: .18s;
+            }
+
+            .scene .anchor {
+                width: 2em;
+                height: 6em;
+            }
+
+            .scene div {
+                position: absolute;
+                transform-style: inherit;
+            }
+
+
+
+        .cube {
+            font-size: 190%;
+            margin-left: -1em;
+            margin-top: -1em;
+        }
+
+            .cube > .piece {
+                width: 1.9em;
+                height: 1.9em;
+            }
+
+                .cube > .piece > .element {
+                    width: 100%;
+                    height: 100%;
+                    background: #0A0A0A;
+                    outline: 1px solid transparent;
+                    border: 0.05em solid #0A0A0A;
+                    border-radius: 10%;
+                }
+
+                    .cube > .piece > .element.left {
+                        transform: rotateX(0deg) rotateY(-90deg) rotateZ(180deg) translateZ(1em);
+                    }
+
+                    .cube > .piece > .element.right {
+                        transform: rotateX(0deg) rotateY(90deg) rotateZ(90deg) translateZ(1em);
+                    }
+
+                    .cube > .piece > .element.back {
+                        transform: rotateX(0deg) rotateY(180deg) rotateZ(-90deg) translateZ(1em);
+                    }
+
+                    .cube > .piece > .element.front {
+                        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);
+                    }
+
+                    .cube > .piece > .element.bottom {
+                        transform: rotateX(-90deg) rotateY(0deg) rotateZ(-90deg) translateZ(1em);
+                    }
+
+                    .cube > .piece > .element.top {
+                        transform: rotateX(90deg) rotateY(0deg) rotateZ(180deg) translateZ(1em);
+                    }
+
+                    .cube > .piece > .element > .sticker {
+                        transform: translateZ(2px);
+                        width: 95%;
+                        height: 95%;
+                        border-radius: 10%;
+                        outline: 1px solid transparent;
+                        box-shadow: inset 0.05em 0.05em 0.2rem 0 rgba(255, 255, 255, 0.25), inset -0.05em -0.05em 0.2rem 0 rgba(0, 0, 0, 0.25);
+                    }
+
+                        .cube > .piece > .element > .sticker.blue {
+                            background-color: #001ca8;
+                        }
+
+                        .cube > .piece > .element > .sticker.green {
+                            background-color: #008000;
+                        }
+
+                        .cube > .piece > .element > .sticker.white {
+                            background-color: #DDD;
+                        }
+
+                        .cube > .piece > .element > .sticker.yellow {
+                            background-color: #E0AE00;
+                        }
+
+                        .cube > .piece > .element > .sticker.orange {
+                            background-color: #FF5000;
+                        }
+
+                        .cube > .piece > .element > .sticker.red {
+                            background-color: #DF0500;
+                        }
+    </style>
+</body>
+</html>
