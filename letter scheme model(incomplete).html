@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Rick's Rubiks Cube(THIS WEBSITE WORKS THE BEST IF YOU USE CHROME ON PC)</title>
+
+</head>
+<body>
+    <div class="scene" id="scene" style="border-color:grey; color:black">
+        <fieldset>
+            <legend>Stop Watch</legend>
+            <a href="#" id="start" onclick="startStopwatch()" style="border-color:grey; color:deeppink">Start</a>&nbsp;
+
+            <a href="#" id="stop" onclick="stopStopwatch()" style="border-color:grey; color:deeppink">Stop</a>&nbsp;
+
+            <a href="#" id="reset" onclick="resetStopwatch()" style="border-color:grey; color:deeppink">Reset</a>&nbsp;
+
+            <span id="s_minutes" style="border-color:grey; color:deeppink">00</span>:
+            <span id="s_seconds" style="border-color:grey; color:deeppink">00</span>:
+            <span id="s_ms" style="border-color:grey; color:deeppink">000</span>
+        </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+        <div id="controls">
+            <button id="middleDown" onclick="middleDown()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                M
+            </button>
+            <button id="middleUp" onclick="middleUp()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                M'
+            </button>
+            <button id="frontClock" onclick="frontClock()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                F
+            </button>
+            <button id="frontCounter" onclick="frontCounter()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                F'
+            </button>
+            <button id="topRight" onclick="topRight()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                U'
+            </button>
+            <button id="topLeft" onclick="topLeft()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                U
+            </button>
+
+            <button id="rightDown" onclick="rightDown()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                R'
+            </button>
+            <button id="rightUp" onclick="rightUp()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                R
+            </button>
+            <button id="leftUp " onclick="leftUp ()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                L'
+            </button>
+            <button id="leftDown" onclick="leftDown()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                L
+            </button>
+            <button id="backCounter" onclick="backCounter()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                B
+            </button>
+            <button id="backClock " onclick="backClock ()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                B'
+            </button>
+            <button id="bottomRight" onclick="bottomRight()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                D
+            </button>
+            <button id="bottomLeft " onclick="bottomLeft()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                D'
+            </button>
+            <button id="scramble" onclick="scramble()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                Scramble
+            </button>
+            <div id="turn">
+                <input type="text" id="instruct"><br>
+                <button id="submit" onclick="submit()" style="background-color:deepskyblue; border-color:deeppink; color:white">
+                    Submit
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="pivot centered" id="pivot" style="transform: rotateX(-35deg) rotateY(-135deg);">
+            <div class="cube" id="cube">
+                <div class="piece">
+                    <div class="element left"><div class="cU"><p></p></div></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"><div class="cD"><p></p></div></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"><div class="cF"><p></p></div></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"><div class="cB"><p></p></div></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"><div class="cR"><p></p></div></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"><div class="cL"><p></p></div></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"><div class="eA"><p>S</p></div></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"><div class="eQ"><p>W</p></div></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"><div class="eU"><p>I</p></div></div>
+                    <div class="element top"><div class="eK"><P>C</P></div></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"><div class="eJ"><p>B</p></div></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"><div class="eP"><p>M</p></div></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"><div class="eR"><p>X</p></div></div>
+                    <div class="element back"></div>
+                    <div class="element front"><div class="eH"><p>G</p></div></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"><div class="eV"><p>J</p></div></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"><div class="eO"><p>P</p></div></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"><div class="eD"><p>R</p></div></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"><div class="eE"><p>H</p></div></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"><div class="eC"><p>Q</p></div></div>
+                    <div class="element right"></div>
+                    <div class="element top"><div class="eI"><p>A</p></div></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"><div class="eW"><p>K</p></div></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"><div class="eS"><p>U</p></div></div>
+                    <div class="element back"></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"><div class="eL"><p>D</p></div></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"><div class="eF"><p>E</p></div></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"><div class="eT"><p>V</p></div></div>
+                    <div class="element back"><div class="eN"><p>O</p></div></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"><div class="eB"><p>T</p></div></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"><div class="eM"><p>N</p></div></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"><div class="eX"><p>L</p></div></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"><div class="eG"><p>F</p></div></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"><div class="Q"><p>Q</p></div></div>
+                    <div class="element right"></div>
+                    <div class="element top"><div class="B"><p>B</p></div></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"><div class="N"><p>N</p></div></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"><div class="L"><p>L</p></div></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"><div class="U"><p>U</p></div></div>
+                    <div class="element back"></div>
+                    <div class="element front"><div class="G"><p>G</p></div></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"><div class="R"><p>R</p></div></div>
+                    <div class="element right"></div>
+                    <div class="element top"><div class="A"><p>A</p></div></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"><div class="E"><p>E</p></div></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"><div class="K"><p>K</p></div></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"><div class="V"><p>V</p></div></div>
+                    <div class="element back"><div class="P"><p>P</p></div></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"><div class="T"><p>T</p></div></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"><div class="W"><p>W</p></div></div>
+                    <div class="element back"><div class="O"><p>O</p></div></div>
+                    <div class="element front"></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"><div class="I"><p>I</p></div></div>
+                    <div class="element top"><div class="D"><p>D</p></div></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"></div>
+                    <div class="element front"><div class="F"><p>F</p></div></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"><div class="S"><p>S</p></div></div>
+                    <div class="element right"></div>
+                    <div class="element top"></div>
+                    <div class="element bottom"><div class="X"><p>X</p></div></div>
+                    <div class="element back"></div>
+                    <div class="element front"><div class="H"><p>H</p></div></div>
+                </div>
+                <div class="piece">
+                    <div class="element left"></div>
+                    <div class="element right"><div class="J"><p>J</p></div></div>
+                    <div class="element top"><div class="C"><p>C</p></div></div>
+                    <div class="element bottom"></div>
+                    <div class="element back"><div class="M">M</div></div>
+                    <div class="element front"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="guide">
+        <div class="anchor" id="anchor3" style="transform: translateX(3px) translateZ(-33.33%) rotate(-270deg) translateZ(66.67%);"></div>
+        <div class="anchor" id="anchor2" style="transform: translateX(3px) translateZ(-33.33%) rotate(-180deg) translateZ(66.67%);"></div>
+        <div class="anchor" id="anchor1" style="transform: translateX(3px) translateZ(-33.33%) rotate(-90deg) translateZ(66.67%);"></div>
+        <div class="anchor" id="anchor0" style="transform: translateX(3px) translateZ(-33.33%) rotate(0deg) translateZ(66.67%);"></div>
+        <div class="anchor" id="anchor7" style="transform: translateZ(3px) translateY(-33.33%) rotate(-270deg) translateY(66.67%);"></div>
+        <div class="anchor" id="anchor6" style="transform: translateZ(3px) translateY(-33.33%) rotate(-180deg) translateY(66.67%);"></div>
+        <div class="anchor" id="anchor5" style="transform: translateZ(3px) translateY(-33.33%) rotate(-90deg) translateY(66.67%);"></div>
+        <div class="anchor" id="anchor4" style="transform: translateZ(3px) translateY(-33.33%) rotate(0deg) translateY(66.67%);"></div>
+        <div class="anchor" id="anchor11" style="transform: translateY(3px) translateX(-33.33%) rotate(-270deg) translateX(66.67%);"></div>
+        <div class="anchor" id="anchor10" style="transform: translateY(3px) translateX(-33.33%) rotate(-180deg) translateX(66.67%);"></div>
+        <div class="anchor" id="anchor9" style="transform: translateY(3px) translateX(-33.33%) rotate(-90deg) translateX(66.67%);"></div>
+        <div class="anchor" id="anchor8" style="transform: translateY(3px) translateX(-33.33%) rotate(0deg) translateX(66.67%);"></div>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+
+var colors = ["blue", "green", "yellow", "white", "orange", "red"],
+	pieces = document.getElementsByClassName("piece");
+function mx(i, j) {
+	return (
+		([2, 4, 3, 5][j % 4 | 0] +
+			(i % 2) * (((j | 0) % 4) * 2 + 3) +
+			2 * ((i / 2) | 0)) %
+		6
+	);
+}
+let offset = 0,
+	paused = true;
+
+render();
+
+function startStopwatch(evt) {
+	if (paused) {
+		paused = false;
+		offset -= Date.now();
+		render();
+	}
+}
+
+function stopStopwatch(evt) {
+	if (!paused) {
+		paused = true;
+		offset += Date.now();
+	}
+}
+
+function resetStopwatch(evt) {
+	if (paused) {
+		offset = 0;
+		render();
+	} else {
+		offset = -Date.now();
+	}
+}
+
+function format(value, scale, modulo, padding) {
+	value = Math.floor(value / scale) % modulo;
+	return value.toString().padStart(padding, 0);
+}
+
+function render() {
+	var value = paused ? offset : Date.now() + offset;
+
+	document.querySelector('#s_ms').textContent = format(value, 1, 1000, 3);
+	document.querySelector('#s_seconds').textContent = format(value, 1000, 60, 2);
+	document.querySelector('#s_minutes').textContent = format(value, 60000, 60, 2);
+
+	if (!paused) {
+		requestAnimationFrame(render);
+	}
+}
+function getAxis(face) {
+	return String.fromCharCode("X".charCodeAt(0) + face / 2); // X, Y or Z
+}
+
+function assembleCube() {
+	function moveto(face) {
+		id = id + (1 << face);
+		pieces[i].children[face]
+			.appendChild(document.createElement("div"))
+			.setAttribute("class", "sticker " + colors[face]);
+		return "translate" + getAxis(face) + "(" + ((face % 2) * 4 - 2) + "em)";
+	}
+	for (var id, x, i = 0; (id = 0), i < 26; i++) {
+		x = mx(i, i % 18);
+		pieces[i].style.transform =
+			"rotateX(0deg)" +
+			moveto(i % 6) +
+			(i > 5 ? moveto(x) + (i > 17 ? moveto(mx(x, x + 2)) : "") : "");
+		pieces[i].setAttribute("id", "piece" + id);
+	}
+}
+
+function getPieceBy(face, index, corner) {
+	return document.getElementById(
+		"piece" +
+		((1 << face) + (1 << mx(face, index)) + (1 << mx(face, index + 1)) * corner)
+	);
+}
+
+
+function swapPieces(face, times) {
+	for (var i = 0; i < 6 * times; i++) {
+		var piece1 = getPieceBy(face, i / 2, i % 2),
+			piece2 = getPieceBy(face, i / 2 + 1, i % 2);
+		for (var j = 0; j < 5; j++) {
+			var sticker1 = piece1.children[j < 4 ? mx(face, j) : face].firstChild,
+				sticker2 = piece2.children[j < 4 ? mx(face, j + 1) : face].firstChild,
+				className = sticker1 ? sticker1.className : "";
+			if (className)
+				(sticker1.className = sticker2.className), (sticker2.className = className);
+		}
+	}
+}
+
+function animateRotation(face, cw, currentTime) {
+	console.log(face + " " + cw + " " + currentTime);
+	var k = 0.3 * ((face % 2) * 2 - 1) * (2 * cw - 1),
+		qubes = Array(9)
+			.fill(pieces[face])
+			.map(function (value, index) {
+				return index ? getPieceBy(face, index / 2, index % 2) : value;
+			});
+	(function rotatePieces() {
+		var passed = Date.now() - currentTime,
+			style =
+				"rotate" + getAxis(face) + "(" + k * passed * (passed < 300) + "deg)";
+		qubes.forEach(function (piece) {
+			piece.style.transform = piece.style.transform.replace(
+				/rotate.\(\S+\)/,
+				style
+			);
+		});
+		if (passed >= 300) return swapPieces(face, 3 - 2 * cw);
+		requestAnimationFrame(rotatePieces);
+	})();
+}
+
+function setup() {
+	angleMode(DEGREE)
+}
+function frontClock() {
+	animateRotation(1, true, Date.now());
+}
+function frontCounter() {
+	animateRotation(1, false, Date.now());
+}
+function backClock() {
+	animateRotation(0, false, Date.now());
+}
+function backCounter() {
+	animateRotation(0, true, Date.now());
+}
+function bottomLeft() {
+	animateRotation(3, false, Date.now());
+}
+function bottomRight() {
+	animateRotation(3, true, Date.now());
+}
+function leftDown() {
+	animateRotation(5, true, Date.now());
+}
+function leftUp() {
+	animateRotation(5, false, Date.now());
+}
+function rightDown() {
+	animateRotation(4, false, Date.now());
+}
+function rightUp() {
+	animateRotation(4, true, Date.now());
+}
+function topRight() {
+	animateRotation(2, false, Date.now());
+}
+function topLeft() {
+	animateRotation(2, true, Date.now());
+}
+function middleUp() {
+	animateRotation(4, false, Date.now());
+	animateRotation(5, true, Date.now());
+
+}
+function middleDown() {
+	animateRotation(4, true, Date.now());
+	animateRotation(5, false, Date.now());
+
+}
+
+
+function scramble() {
+	for (var x = 0; x < 30; x++) {
+		var array = ([frontClock, frontCounter, backClock, backCounter, rightUp, rightDown, leftUp, leftDown, topRight, topLeft, bottomRight, bottomLeft]);
+		(array[Math.floor(Math.random() * array.length)])();
+	}
+}
+function mousedown(md_e) {
+	var startXY = pivot.style.transform.match(/-?\d+\.?\d*/g).map(Number),
+		element = md_e.target.closest(".element"),
+		face = [].indexOf.call((element || cube).parentNode.children, element);
+	function mousemove(mm_e) {
+		if (element) {
+			var gid = /\d/.exec(document.elementFromPoint(mm_e.pageX, mm_e.pageY).id);
+			if (gid && gid.input.includes("anchor")) {
+				mouseup();
+				var e = element.parentNode.children[
+					mx(face, Number(gid) + 3)
+				].hasChildNodes();
+				animateRotation(mx(face, Number(gid) + 1 + 2 * e), e, Date.now());
+
+			}
+		} else
+			pivot.style.transform =
+				"rotateX(" +
+				(startXY[0] - (mm_e.pageY - md_e.pageY) / 2) +
+				"deg)" +
+				"rotateY(" +
+				(startXY[1] + (mm_e.pageX - md_e.pageX) / 2) +
+				"deg)";
+	}
+	function mouseup() {
+		document.body.appendChild(guide);
+		scene.removeEventListener("mousemove", mousemove);
+		document.removeEventListener("mouseup", mouseup);
+		scene.addEventListener("mousedown", mousedown);
+	}
+
+	(element || document.body).appendChild(guide);
+	scene.addEventListener("mousemove", mousemove);
+	document.addEventListener("mouseup", mouseup);
+	scene.removeEventListener("mousedown", mousedown);
+}
+function submit() {
+	var str = document.getElementById("instruct").value;
+	var arr = str.split(/[ ,]+/).filter(Boolean);
+
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i] == "F")
+			frontClock();
+		if (arr[i] == "F'")
+			frontCounter();
+		if (arr[i] == "R")
+			rightUp();
+		if (arr[i] == "R'")
+			rightDown();
+		if (arr[i] == "L")
+			leftUp();
+		if (arr[i] == "L'")
+			leftDown();
+		if (arr[i] == "U")
+			topLeft();
+		if (arr[i] == "U'")
+			topRight();
+		if (arr[i] == "B")
+			backClock();
+		if (arr[i] == "B'")
+			backCounter();
+		if (arr[i] == "D")
+			bottomRight();
+		if (arr[i] == "D'")
+			bottomLeft();
+		if (arr[i] == "M'")
+			middleUp()
+		if (arr[i] == "M")
+			middleDown()
+	}
+
+}
+
+document.ondragstart = function () {
+	return false;
+};
+
+
+
+window.addEventListener("load", assembleCube);
+scene.addEventListener("mousedown", mousedown);
+swapPieces(0, 2);
+function setCookie(cname, cvalue, exdays) {
+	var d = new Date();
+	d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+	var expires = "expires=" + d.toGMTString();
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+	var name = cname + "=";
+	var decodedCookie = decodeURIComponent(document.cookie);
+	var ca = decodedCookie.split(';');
+	for (var i = 0; i < ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
+		}
+	}
+	return "";
+}
+
+function checkCookie() {
+	var user = getCookie("username");
+	if (user != "") {
+		alert("Welcome again " + user);
+	} else {
+		user = prompt("Please enter your name:", "");
+		if (user != "" && user != null) {
+			setCookie("username", user, 30);
+		}
+	}
+}
+
+    </script>
+    <style>
+        p {
+            display: contents
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            background-image: url('https://images5.alphacoders.com/686/thumb-1920-686331.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+
+
+
+        .centered, .cube > .piece > .element > .sticker {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .scene {
+            width: 100%;
+            height: 100%;
+            perspective: 1200px;
+            transform-style: preserve-3d;
+        }
+
+            .scene > .pivot {
+                width: 0;
+                height: 0;
+                transition: .18s;
+            }
+
+            .scene .anchor {
+                width: 2em;
+                height: 6em;
+            }
+
+            .scene div {
+                position: absolute;
+                transform-style: inherit;
+            }
+
+
+
+        .cube {
+            font-size: 190%;
+            margin-left: -1em;
+            margin-top: -1em;
+        }
+
+            .cube > .piece {
+                width: 1.9em;
+                height: 1.9em;
+            }
+
+                .cube > .piece > .element {
+                    width: 100%;
+                    height: 100%;
+                    background: #0A0A0A;
+                    outline: 1px solid transparent;
+                    border: 0.05em solid #0A0A0A;
+                    border-radius: 10%;
+                }
+
+                    .cube > .piece > .element.left {
+                        transform: rotateX(0deg) rotateY(-90deg) rotateZ(180deg) translateZ(1em);
+                    }
+
+                    .cube > .piece > .element.right {
+                        transform: rotateX(0deg) rotateY(90deg) rotateZ(90deg) translateZ(1em);
+                    }
+
+                    .cube > .piece > .element.back {
+                        transform: rotateX(0deg) rotateY(180deg) rotateZ(-90deg) translateZ(1em);
+                    }
+
+                    .cube > .piece > .element.front {
+                        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(1em);
+                    }
+
+                    .cube > .piece > .element.bottom {
+                        transform: rotateX(-90deg) rotateY(0deg) rotateZ(-90deg) translateZ(1em);
+                    }
+
+                    .cube > .piece > .element.top {
+                        transform: rotateX(90deg) rotateY(0deg) rotateZ(180deg) translateZ(1em);
+                    }
+
+
+
+
+
+                    .cube > .piece > .element > .sticker.blue {
+                        background-color: transparent;
+                    }
+
+                    .cube > .piece > .element > .sticker.green {
+                        background-color: transparent;
+                    }
+
+                    .cube > .piece > .element > .sticker.white {
+                        background-color: transparent;
+                    }
+
+                    .cube > .piece > .element > .sticker.yellow {
+                        background-color: transparent;
+                    }
+
+                    .cube > .piece > .element > .sticker.orange {
+                        background-color: transparent;
+                    }
+
+                    .cube > .piece > .element > .sticker.red {
+                        background-color: transparent;
+                    }
+
+
+                    .cube > .piece > .element > .cU {
+                        background-color: blue;
+                        margin: auto;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .cD {
+                        background-color: green;
+                        margin: auto;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .cF {
+                        background-color: white;
+                        margin: auto;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .cB {
+                        background-color: yellow;
+                        margin: auto;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .cR {
+                        background-color: red;
+                        margin: auto;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .cL {
+                        background-color: orange;
+                        margin: auto;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eA {
+                        background-color: blue;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eQ {
+                        background-color: yellow;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eU {
+                        background-color: green;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eK {
+                        background-color: white;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eJ {
+                        background-color: white;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eP {
+                        background-color: red;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eR {
+                        background-color: yellow;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eH {
+                        background-color: orange;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eV {
+                        background-color: green;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eO {
+                        background-color: red;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eD {
+                        background-color: blue;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eE {
+                        background-color: orange;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eC {
+                        background-color: blue;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eI {
+                        background-color: white;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eS {
+                        background-color: yellow;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eW {
+                        background-color: green;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eL {
+                        background-color: white;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eF {
+                        background-color: orange;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eN {
+                        background-color: red;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eT {
+                        background-color: yellow;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eN {
+                        background-color: red;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eT {
+                        background-color: yellow;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eB {
+                        background-color: blue;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eM {
+                        background-color: red;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eG {
+                        background-color: orange;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .eX {
+                        background-color: green;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+                    .cube > .piece > .element > .B{
+                        background-color: white;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .N {
+                        background-color: red;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .Q {
+                        background-color: blue;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+                    .cube > .piece > .element > .L {
+                        background-color: green;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .U {
+                        background-color: yellow;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .G {
+                        background-color: orange;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+                    .cube > .piece > .element > .R {
+                        background-color: blue;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .A {
+                        background-color: white;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .E {
+                        background-color: orange;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+                    .cube > .piece > .element > .K{
+                        width: 1.9em;
+                        background-color: green;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .V {
+                        background-color: yellow;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .P {
+                        background-color: red;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+                    .cube > .piece > .element > .T {
+                        width: 1.9em;
+                        background-color: blue;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .W {
+                        background-color: yellow;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .O {
+                        background-color: red;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+                    .cube > .piece > .element > .I {
+                        width: 1.9em;
+                        background-color: green;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .D {
+                        background-color: white;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .F {
+                        background-color: orange;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+                    .cube > .piece > .element > .H {
+                        width: 1.9em;
+                        background-color: orange;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .X {
+                        background-color: yellow;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .S {
+                        background-color: blue;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+                    .cube > .piece > .element > .J {
+                        width: 1.9em;
+                        background-color: green;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .C {
+                        background-color: white;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .cube > .piece > .element > .M {
+                        background-color: red;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+    </style>
+</body>
+</html>
